@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "horizonYears": 4,
+  "cadenceLabel": "Updated weekly",
+  "historyWeeks": 104,
+  "sigmoid": { "center": 70.0, "scale": 10.0, "floor": 0.05, "span": 0.40 },
+
+  "factors": {
+    "polarization": { "weight": 0.20, "method": "curated" },
+    "distrust":     { "weight": 0.15, "method": "curated" },
+    "violence":     { "weight": 0.20, "method": "live", "source": "gdelt" },
+    "economy":      { "weight": 0.10, "method": "live", "source": "fred"  },
+    "animosity":    { "weight": 0.20, "method": "curated" },
+    "extremism":    { "weight": 0.15, "method": "curated" }
+  },
+
+  "gdelt": {
+    "endpoint": "https://api.gdeltproject.org/api/v2/doc/doc",
+    "query": "(theme:PROTEST OR theme:ARMEDCONFLICT OR theme:TERROR) sourcecountry:US",
+    "mode": "timelinevol",
+    "windowDays": 90,
+    "normalize": { "lo": 1.0, "hi": 6.0 },
+    "sourceURL": "https://www.gdeltproject.org/",
+    "sourceLabel": "GDELT",
+    "mockIntensity": 3.31,
+    "_tuneNote": "Calibrated from a live probe 2026-06-07: avg intensity 3.31 (range 2.2-4.7) over 90d -> ~46/100 with lo=1.0/hi=6.0 ('moderate, headroom'). Re-check the printed 'GDELT avg intensity' periodically and adjust hi up (cooler) or down (hotter). GDELT is keyless; attribution + a link required by their terms."
+  },
+
+  "fred": {
+    "endpoint": "https://api.stlouisfed.org/fred/series/observations",
+    "sourceURL": "https://www.federalreserve.gov/data.htm",
+    "sourceLabel": "FRED / Federal Reserve",
+    "series": [
+      { "id": "SIPOVGINIUSA", "label": "Gini index (World Bank)", "weight": 0.34, "normalize": { "lo": 35, "hi": 45 },   "invert": false, "mock": 41.8 },
+      { "id": "TDSP",         "label": "Household debt service",  "weight": 0.33, "normalize": { "lo": 8.0, "hi": 14.0 }, "invert": false, "mock": 11.3 },
+      { "id": "LES1252881600Q","label": "Real median earnings",   "weight": 0.33, "normalize": { "lo": 330, "hi": 395 },  "invert": true,  "mock": 376  }
+    ]
+  }
+}

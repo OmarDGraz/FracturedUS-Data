@@ -1,0 +1,69 @@
+{
+  "_comment": "Slow-moving factors with no public API. Update currentValue + asOf + events when a new Pew/Gallup/ADL/SPLC report drops (quarterly to yearly). oneYearMean/fiveYearMean anchor the backfilled history trajectory. Values are 0-100.",
+
+  "factors": {
+    "polarization": {
+      "currentValue": 79,
+      "oneYearMean": 77,
+      "fiveYearMean": 74,
+      "asOf": "2026-04-01",
+      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceLabel": "Pew Research",
+      "events": [
+        { "date": "2026-04-22", "text": "House passes party-line voting bill on near-zero crossover." },
+        { "date": "2026-03-14", "text": "Pew tracking poll records widest issue-position gap in survey history." },
+        { "date": "2026-02-02", "text": "Two state legislatures pass dueling laws on the same federal issue within 48 hours." }
+      ]
+    },
+    "distrust": {
+      "currentValue": 78,
+      "oneYearMean": 76,
+      "fiveYearMean": 71,
+      "asOf": "2026-03-01",
+      "sourceURL": "https://news.gallup.com/poll/1597/confidence-institutions.aspx",
+      "sourceLabel": "Gallup",
+      "events": [
+        { "date": "2026-04-30", "text": "Gallup: trust in Supreme Court hits a new survey low." },
+        { "date": "2026-03-09", "text": "Three of seven major institutions polled fall below 20% confidence." },
+        { "date": "2026-01-18", "text": "Pew: 71% say neither party governs in the public interest." }
+      ]
+    },
+    "animosity": {
+      "currentValue": 82,
+      "oneYearMean": 80,
+      "fiveYearMean": 77,
+      "asOf": "2026-04-01",
+      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceLabel": "Pew Research",
+      "events": [
+        { "date": "2026-04-18", "text": "Pew: share calling the other party 'a threat to the nation' reaches new high in both parties." },
+        { "date": "2026-03-22", "text": "Survey records record-low willingness to live near opposing partisans." },
+        { "date": "2026-02-10", "text": "Affective polarization index ticks up for the eleventh straight quarter." }
+      ]
+    },
+    "extremism": {
+      "currentValue": 60,
+      "oneYearMean": 58,
+      "fiveYearMean": 55,
+      "asOf": "2026-05-01",
+      "sourceURL": "https://www.adl.org/resources/reports/",
+      "sourceLabel": "ADL / SPLC",
+      "events": [
+        { "date": "2026-05-05", "text": "ADL reports 14% rise in organized extremist incidents year-over-year." },
+        { "date": "2026-03-28", "text": "Three militia-linked arrests across two states in one week." },
+        { "date": "2026-02-15", "text": "SPLC adds 22 new hate-group entries in annual update." }
+      ]
+    }
+  },
+
+  "historicalAnalogues": [
+    { "year": 1860, "score": 92, "label": "Pre-Civil War",    "note": "The final year before secession and war." },
+    { "year": 1932, "score": 74, "label": "Great Depression", "note": "Economic collapse drove the deepest realignment of the 20th century." },
+    { "year": 1968, "score": 78, "label": "1968",             "note": "Assassinations, riots, anti-war revolt; institutional trust in free-fall." },
+    { "year": 1974, "score": 70, "label": "Watergate",        "note": "Trust in government cratered after the resignation of a president." },
+    { "year": 1995, "score": 56, "label": "Mid-1990s",        "note": "Militia movement peak; Oklahoma City bombing." },
+    { "year": 2008, "score": 62, "label": "Financial Crisis", "note": "Economic stress with rising partisan animosity." },
+    { "year": 2020, "score": 73, "label": "2020 Election",    "note": "Pandemic, protests, a contested election." },
+    { "year": 2022, "score": 70, "label": "Post-Jan 6",       "note": "Sustained elevated political-violence baseline." }
+  ]
+}

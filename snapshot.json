@@ -1,0 +1,1698 @@
+{
+  "schemaVersion": 2,
+  "asOf": "2026-06-06",
+  "asOfLabel": "Jun 6, 2026",
+  "generatedAt": "2026-06-06T00:00:00Z",
+  "horizonYears": 4,
+  "cadenceLabel": "Updated weekly",
+  "composite": {
+    "score": 67.23,
+    "probability": 0.2225,
+    "history": [
+      {
+        "date": "2025-06-14",
+        "score": 64.39,
+        "probability": 0.1953
+      },
+      {
+        "date": "2025-06-21",
+        "score": 63.7,
+        "probability": 0.189
+      },
+      {
+        "date": "2025-06-28",
+        "score": 64.16,
+        "probability": 0.1932
+      },
+      {
+        "date": "2025-07-05",
+        "score": 64.55,
+        "probability": 0.1968
+      },
+      {
+        "date": "2025-07-12",
+        "score": 63.99,
+        "probability": 0.1916
+      },
+      {
+        "date": "2025-07-19",
+        "score": 64.35,
+        "probability": 0.195
+      },
+      {
+        "date": "2025-07-26",
+        "score": 64.71,
+        "probability": 0.1983
+      },
+      {
+        "date": "2025-08-02",
+        "score": 64.18,
+        "probability": 0.1934
+      },
+      {
+        "date": "2025-08-09",
+        "score": 64.51,
+        "probability": 0.1964
+      },
+      {
+        "date": "2025-08-16",
+        "score": 64.91,
+        "probability": 0.2002
+      },
+      {
+        "date": "2025-08-23",
+        "score": 64.37,
+        "probability": 0.1951
+      },
+      {
+        "date": "2025-08-30",
+        "score": 64.7,
+        "probability": 0.1982
+      },
+      {
+        "date": "2025-09-06",
+        "score": 65.07,
+        "probability": 0.2017
+      },
+      {
+        "date": "2025-09-13",
+        "score": 64.56,
+        "probability": 0.1969
+      },
+      {
+        "date": "2025-09-20",
+        "score": 64.86,
+        "probability": 0.1997
+      },
+      {
+        "date": "2025-09-27",
+        "score": 65.23,
+        "probability": 0.2032
+      },
+      {
+        "date": "2025-10-04",
+        "score": 64.78,
+        "probability": 0.199
+      },
+      {
+        "date": "2025-10-11",
+        "score": 65.12,
+        "probability": 0.2021
+      },
+      {
+        "date": "2025-10-18",
+        "score": 65.39,
+        "probability": 0.2047
+      },
+      {
+        "date": "2025-10-25",
+        "score": 64.97,
+        "probability": 0.2007
+      },
+      {
+        "date": "2025-11-01",
+        "score": 65.31,
+        "probability": 0.2039
+      },
+      {
+        "date": "2025-11-08",
+        "score": 65.55,
+        "probability": 0.2062
+      },
+      {
+        "date": "2025-11-15",
+        "score": 65.23,
+        "probability": 0.2032
+      },
+      {
+        "date": "2025-11-22",
+        "score": 65.47,
+        "probability": 0.2055
+      },
+      {
+        "date": "2025-11-29",
+        "score": 65.71,
+        "probability": 0.2077
+      },
+      {
+        "date": "2025-12-06",
+        "score": 65.42,
+        "probability": 0.205
+      },
+      {
+        "date": "2025-12-13",
+        "score": 65.66,
+        "probability": 0.2073
+      },
+      {
+        "date": "2025-12-20",
+        "score": 65.91,
+        "probability": 0.2097
+      },
+      {
+        "date": "2025-12-27",
+        "score": 65.64,
+        "probability": 0.2071
+      },
+      {
+        "date": "2026-01-03",
+        "score": 65.82,
+        "probability": 0.2088
+      },
+      {
+        "date": "2026-01-10",
+        "score": 66.07,
+        "probability": 0.2112
+      },
+      {
+        "date": "2026-01-17",
+        "score": 65.83,
+        "probability": 0.2089
+      },
+      {
+        "date": "2026-01-24",
+        "score": 66.08,
+        "probability": 0.2113
+      },
+      {
+        "date": "2026-01-31",
+        "score": 66.23,
+        "probability": 0.2127
+      },
+      {
+        "date": "2026-02-07",
+        "score": 66.02,
+        "probability": 0.2107
+      },
+      {
+        "date": "2026-02-14",
+        "score": 66.24,
+        "probability": 0.2128
+      },
+      {
+        "date": "2026-02-21",
+        "score": 66.39,
+        "probability": 0.2143
+      },
+      {
+        "date": "2026-02-28",
+        "score": 66.28,
+        "probability": 0.2132
+      },
+      {
+        "date": "2026-03-07",
+        "score": 66.43,
+        "probability": 0.2147
+      },
+      {
+        "date": "2026-03-14",
+        "score": 66.55,
+        "probability": 0.2158
+      },
+      {
+        "date": "2026-03-21",
+        "score": 66.47,
+        "probability": 0.2151
+      },
+      {
+        "date": "2026-03-28",
+        "score": 66.59,
+        "probability": 0.2162
+      },
+      {
+        "date": "2026-04-04",
+        "score": 66.71,
+        "probability": 0.2174
+      },
+      {
+        "date": "2026-04-11",
+        "score": 66.69,
+        "probability": 0.2172
+      },
+      {
+        "date": "2026-04-18",
+        "score": 66.78,
+        "probability": 0.2181
+      },
+      {
+        "date": "2026-04-25",
+        "score": 66.91,
+        "probability": 0.2193
+      },
+      {
+        "date": "2026-05-02",
+        "score": 66.88,
+        "probability": 0.2191
+      },
+      {
+        "date": "2026-05-09",
+        "score": 66.94,
+        "probability": 0.2196
+      },
+      {
+        "date": "2026-05-16",
+        "score": 67.07,
+        "probability": 0.2209
+      },
+      {
+        "date": "2026-05-23",
+        "score": 67.07,
+        "probability": 0.2209
+      },
+      {
+        "date": "2026-05-30",
+        "score": 67.2,
+        "probability": 0.2222
+      },
+      {
+        "date": "2026-06-06",
+        "score": 67.23,
+        "probability": 0.2225
+      }
+    ]
+  },
+  "factors": {
+    "polarization": {
+      "currentValue": 79.0,
+      "oneYearMean": 78.0,
+      "fiveYearMean": 78.0,
+      "method": "curated",
+      "asOf": "2026-04-01",
+      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceLabel": "Pew Research",
+      "events": [
+        {
+          "date": "2026-04-22",
+          "text": "House passes party-line voting bill on near-zero crossover."
+        },
+        {
+          "date": "2026-03-14",
+          "text": "Pew tracking poll records widest issue-position gap in survey history."
+        },
+        {
+          "date": "2026-02-02",
+          "text": "Two state legislatures pass dueling laws on the same federal issue within 48 hours."
+        }
+      ],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 77.0
+        },
+        {
+          "date": "2025-06-21",
+          "value": 77.0
+        },
+        {
+          "date": "2025-06-28",
+          "value": 77.1
+        },
+        {
+          "date": "2025-07-05",
+          "value": 77.1
+        },
+        {
+          "date": "2025-07-12",
+          "value": 77.2
+        },
+        {
+          "date": "2025-07-19",
+          "value": 77.2
+        },
+        {
+          "date": "2025-07-26",
+          "value": 77.2
+        },
+        {
+          "date": "2025-08-02",
+          "value": 77.3
+        },
+        {
+          "date": "2025-08-09",
+          "value": 77.3
+        },
+        {
+          "date": "2025-08-16",
+          "value": 77.4
+        },
+        {
+          "date": "2025-08-23",
+          "value": 77.4
+        },
+        {
+          "date": "2025-08-30",
+          "value": 77.4
+        },
+        {
+          "date": "2025-09-06",
+          "value": 77.5
+        },
+        {
+          "date": "2025-09-13",
+          "value": 77.5
+        },
+        {
+          "date": "2025-09-20",
+          "value": 77.5
+        },
+        {
+          "date": "2025-09-27",
+          "value": 77.6
+        },
+        {
+          "date": "2025-10-04",
+          "value": 77.6
+        },
+        {
+          "date": "2025-10-11",
+          "value": 77.7
+        },
+        {
+          "date": "2025-10-18",
+          "value": 77.7
+        },
+        {
+          "date": "2025-10-25",
+          "value": 77.7
+        },
+        {
+          "date": "2025-11-01",
+          "value": 77.8
+        },
+        {
+          "date": "2025-11-08",
+          "value": 77.8
+        },
+        {
+          "date": "2025-11-15",
+          "value": 77.9
+        },
+        {
+          "date": "2025-11-22",
+          "value": 77.9
+        },
+        {
+          "date": "2025-11-29",
+          "value": 77.9
+        },
+        {
+          "date": "2025-12-06",
+          "value": 78.0
+        },
+        {
+          "date": "2025-12-13",
+          "value": 78.0
+        },
+        {
+          "date": "2025-12-20",
+          "value": 78.1
+        },
+        {
+          "date": "2025-12-27",
+          "value": 78.1
+        },
+        {
+          "date": "2026-01-03",
+          "value": 78.1
+        },
+        {
+          "date": "2026-01-10",
+          "value": 78.2
+        },
+        {
+          "date": "2026-01-17",
+          "value": 78.2
+        },
+        {
+          "date": "2026-01-24",
+          "value": 78.3
+        },
+        {
+          "date": "2026-01-31",
+          "value": 78.3
+        },
+        {
+          "date": "2026-02-07",
+          "value": 78.3
+        },
+        {
+          "date": "2026-02-14",
+          "value": 78.4
+        },
+        {
+          "date": "2026-02-21",
+          "value": 78.4
+        },
+        {
+          "date": "2026-02-28",
+          "value": 78.5
+        },
+        {
+          "date": "2026-03-07",
+          "value": 78.5
+        },
+        {
+          "date": "2026-03-14",
+          "value": 78.5
+        },
+        {
+          "date": "2026-03-21",
+          "value": 78.6
+        },
+        {
+          "date": "2026-03-28",
+          "value": 78.6
+        },
+        {
+          "date": "2026-04-04",
+          "value": 78.6
+        },
+        {
+          "date": "2026-04-11",
+          "value": 78.7
+        },
+        {
+          "date": "2026-04-18",
+          "value": 78.7
+        },
+        {
+          "date": "2026-04-25",
+          "value": 78.8
+        },
+        {
+          "date": "2026-05-02",
+          "value": 78.8
+        },
+        {
+          "date": "2026-05-09",
+          "value": 78.8
+        },
+        {
+          "date": "2026-05-16",
+          "value": 78.9
+        },
+        {
+          "date": "2026-05-23",
+          "value": 78.9
+        },
+        {
+          "date": "2026-05-30",
+          "value": 79.0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 79.0
+        }
+      ]
+    },
+    "distrust": {
+      "currentValue": 78.0,
+      "oneYearMean": 77.0,
+      "fiveYearMean": 77.0,
+      "method": "curated",
+      "asOf": "2026-03-01",
+      "sourceURL": "https://news.gallup.com/poll/1597/confidence-institutions.aspx",
+      "sourceLabel": "Gallup",
+      "events": [
+        {
+          "date": "2026-04-30",
+          "text": "Gallup: trust in Supreme Court hits a new survey low."
+        },
+        {
+          "date": "2026-03-09",
+          "text": "Three of seven major institutions polled fall below 20% confidence."
+        },
+        {
+          "date": "2026-01-18",
+          "text": "Pew: 71% say neither party governs in the public interest."
+        }
+      ],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 76.0
+        },
+        {
+          "date": "2025-06-21",
+          "value": 76.0
+        },
+        {
+          "date": "2025-06-28",
+          "value": 76.1
+        },
+        {
+          "date": "2025-07-05",
+          "value": 76.1
+        },
+        {
+          "date": "2025-07-12",
+          "value": 76.2
+        },
+        {
+          "date": "2025-07-19",
+          "value": 76.2
+        },
+        {
+          "date": "2025-07-26",
+          "value": 76.2
+        },
+        {
+          "date": "2025-08-02",
+          "value": 76.3
+        },
+        {
+          "date": "2025-08-09",
+          "value": 76.3
+        },
+        {
+          "date": "2025-08-16",
+          "value": 76.4
+        },
+        {
+          "date": "2025-08-23",
+          "value": 76.4
+        },
+        {
+          "date": "2025-08-30",
+          "value": 76.4
+        },
+        {
+          "date": "2025-09-06",
+          "value": 76.5
+        },
+        {
+          "date": "2025-09-13",
+          "value": 76.5
+        },
+        {
+          "date": "2025-09-20",
+          "value": 76.5
+        },
+        {
+          "date": "2025-09-27",
+          "value": 76.6
+        },
+        {
+          "date": "2025-10-04",
+          "value": 76.6
+        },
+        {
+          "date": "2025-10-11",
+          "value": 76.7
+        },
+        {
+          "date": "2025-10-18",
+          "value": 76.7
+        },
+        {
+          "date": "2025-10-25",
+          "value": 76.7
+        },
+        {
+          "date": "2025-11-01",
+          "value": 76.8
+        },
+        {
+          "date": "2025-11-08",
+          "value": 76.8
+        },
+        {
+          "date": "2025-11-15",
+          "value": 76.9
+        },
+        {
+          "date": "2025-11-22",
+          "value": 76.9
+        },
+        {
+          "date": "2025-11-29",
+          "value": 76.9
+        },
+        {
+          "date": "2025-12-06",
+          "value": 77.0
+        },
+        {
+          "date": "2025-12-13",
+          "value": 77.0
+        },
+        {
+          "date": "2025-12-20",
+          "value": 77.1
+        },
+        {
+          "date": "2025-12-27",
+          "value": 77.1
+        },
+        {
+          "date": "2026-01-03",
+          "value": 77.1
+        },
+        {
+          "date": "2026-01-10",
+          "value": 77.2
+        },
+        {
+          "date": "2026-01-17",
+          "value": 77.2
+        },
+        {
+          "date": "2026-01-24",
+          "value": 77.3
+        },
+        {
+          "date": "2026-01-31",
+          "value": 77.3
+        },
+        {
+          "date": "2026-02-07",
+          "value": 77.3
+        },
+        {
+          "date": "2026-02-14",
+          "value": 77.4
+        },
+        {
+          "date": "2026-02-21",
+          "value": 77.4
+        },
+        {
+          "date": "2026-02-28",
+          "value": 77.5
+        },
+        {
+          "date": "2026-03-07",
+          "value": 77.5
+        },
+        {
+          "date": "2026-03-14",
+          "value": 77.5
+        },
+        {
+          "date": "2026-03-21",
+          "value": 77.6
+        },
+        {
+          "date": "2026-03-28",
+          "value": 77.6
+        },
+        {
+          "date": "2026-04-04",
+          "value": 77.6
+        },
+        {
+          "date": "2026-04-11",
+          "value": 77.7
+        },
+        {
+          "date": "2026-04-18",
+          "value": 77.7
+        },
+        {
+          "date": "2026-04-25",
+          "value": 77.8
+        },
+        {
+          "date": "2026-05-02",
+          "value": 77.8
+        },
+        {
+          "date": "2026-05-09",
+          "value": 77.8
+        },
+        {
+          "date": "2026-05-16",
+          "value": 77.9
+        },
+        {
+          "date": "2026-05-23",
+          "value": 77.9
+        },
+        {
+          "date": "2026-05-30",
+          "value": 78.0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 78.0
+        }
+      ]
+    },
+    "violence": {
+      "currentValue": 46.2,
+      "oneYearMean": 43.2,
+      "fiveYearMean": 43.2,
+      "method": "live",
+      "asOf": "2026-06-06",
+      "sourceURL": "https://www.gdeltproject.org/",
+      "sourceLabel": "GDELT",
+      "events": [],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 41.4
+        },
+        {
+          "date": "2025-06-21",
+          "value": 39.1
+        },
+        {
+          "date": "2025-06-28",
+          "value": 40.4
+        },
+        {
+          "date": "2025-07-05",
+          "value": 41.7
+        },
+        {
+          "date": "2025-07-12",
+          "value": 39.6
+        },
+        {
+          "date": "2025-07-19",
+          "value": 40.8
+        },
+        {
+          "date": "2025-07-26",
+          "value": 42.0
+        },
+        {
+          "date": "2025-08-02",
+          "value": 40.0
+        },
+        {
+          "date": "2025-08-09",
+          "value": 41.1
+        },
+        {
+          "date": "2025-08-16",
+          "value": 42.2
+        },
+        {
+          "date": "2025-08-23",
+          "value": 40.4
+        },
+        {
+          "date": "2025-08-30",
+          "value": 41.5
+        },
+        {
+          "date": "2025-09-06",
+          "value": 42.5
+        },
+        {
+          "date": "2025-09-13",
+          "value": 40.8
+        },
+        {
+          "date": "2025-09-20",
+          "value": 41.8
+        },
+        {
+          "date": "2025-09-27",
+          "value": 42.8
+        },
+        {
+          "date": "2025-10-04",
+          "value": 41.3
+        },
+        {
+          "date": "2025-10-11",
+          "value": 42.2
+        },
+        {
+          "date": "2025-10-18",
+          "value": 43.1
+        },
+        {
+          "date": "2025-10-25",
+          "value": 41.7
+        },
+        {
+          "date": "2025-11-01",
+          "value": 42.6
+        },
+        {
+          "date": "2025-11-08",
+          "value": 43.4
+        },
+        {
+          "date": "2025-11-15",
+          "value": 42.1
+        },
+        {
+          "date": "2025-11-22",
+          "value": 42.9
+        },
+        {
+          "date": "2025-11-29",
+          "value": 43.7
+        },
+        {
+          "date": "2025-12-06",
+          "value": 42.5
+        },
+        {
+          "date": "2025-12-13",
+          "value": 43.3
+        },
+        {
+          "date": "2025-12-20",
+          "value": 43.9
+        },
+        {
+          "date": "2025-12-27",
+          "value": 43.0
+        },
+        {
+          "date": "2026-01-03",
+          "value": 43.6
+        },
+        {
+          "date": "2026-01-10",
+          "value": 44.2
+        },
+        {
+          "date": "2026-01-17",
+          "value": 43.4
+        },
+        {
+          "date": "2026-01-24",
+          "value": 44.0
+        },
+        {
+          "date": "2026-01-31",
+          "value": 44.5
+        },
+        {
+          "date": "2026-02-07",
+          "value": 43.8
+        },
+        {
+          "date": "2026-02-14",
+          "value": 44.3
+        },
+        {
+          "date": "2026-02-21",
+          "value": 44.8
+        },
+        {
+          "date": "2026-02-28",
+          "value": 44.2
+        },
+        {
+          "date": "2026-03-07",
+          "value": 44.7
+        },
+        {
+          "date": "2026-03-14",
+          "value": 45.1
+        },
+        {
+          "date": "2026-03-21",
+          "value": 44.6
+        },
+        {
+          "date": "2026-03-28",
+          "value": 45.0
+        },
+        {
+          "date": "2026-04-04",
+          "value": 45.4
+        },
+        {
+          "date": "2026-04-11",
+          "value": 45.1
+        },
+        {
+          "date": "2026-04-18",
+          "value": 45.4
+        },
+        {
+          "date": "2026-04-25",
+          "value": 45.6
+        },
+        {
+          "date": "2026-05-02",
+          "value": 45.5
+        },
+        {
+          "date": "2026-05-09",
+          "value": 45.7
+        },
+        {
+          "date": "2026-05-16",
+          "value": 45.9
+        },
+        {
+          "date": "2026-05-23",
+          "value": 45.9
+        },
+        {
+          "date": "2026-05-30",
+          "value": 46.1
+        },
+        {
+          "date": "2026-06-06",
+          "value": 46.2
+        }
+      ]
+    },
+    "economy": {
+      "currentValue": 50.9,
+      "oneYearMean": 47.9,
+      "fiveYearMean": 47.9,
+      "method": "live",
+      "asOf": "2026-06-06",
+      "sourceURL": "https://www.federalreserve.gov/data.htm",
+      "sourceLabel": "FRED / Federal Reserve",
+      "events": [],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 46.1
+        },
+        {
+          "date": "2025-06-21",
+          "value": 43.8
+        },
+        {
+          "date": "2025-06-28",
+          "value": 45.1
+        },
+        {
+          "date": "2025-07-05",
+          "value": 46.4
+        },
+        {
+          "date": "2025-07-12",
+          "value": 44.3
+        },
+        {
+          "date": "2025-07-19",
+          "value": 45.5
+        },
+        {
+          "date": "2025-07-26",
+          "value": 46.7
+        },
+        {
+          "date": "2025-08-02",
+          "value": 44.7
+        },
+        {
+          "date": "2025-08-09",
+          "value": 45.8
+        },
+        {
+          "date": "2025-08-16",
+          "value": 46.9
+        },
+        {
+          "date": "2025-08-23",
+          "value": 45.1
+        },
+        {
+          "date": "2025-08-30",
+          "value": 46.2
+        },
+        {
+          "date": "2025-09-06",
+          "value": 47.2
+        },
+        {
+          "date": "2025-09-13",
+          "value": 45.5
+        },
+        {
+          "date": "2025-09-20",
+          "value": 46.5
+        },
+        {
+          "date": "2025-09-27",
+          "value": 47.5
+        },
+        {
+          "date": "2025-10-04",
+          "value": 46.0
+        },
+        {
+          "date": "2025-10-11",
+          "value": 46.9
+        },
+        {
+          "date": "2025-10-18",
+          "value": 47.8
+        },
+        {
+          "date": "2025-10-25",
+          "value": 46.4
+        },
+        {
+          "date": "2025-11-01",
+          "value": 47.3
+        },
+        {
+          "date": "2025-11-08",
+          "value": 48.1
+        },
+        {
+          "date": "2025-11-15",
+          "value": 46.8
+        },
+        {
+          "date": "2025-11-22",
+          "value": 47.6
+        },
+        {
+          "date": "2025-11-29",
+          "value": 48.4
+        },
+        {
+          "date": "2025-12-06",
+          "value": 47.2
+        },
+        {
+          "date": "2025-12-13",
+          "value": 48.0
+        },
+        {
+          "date": "2025-12-20",
+          "value": 48.6
+        },
+        {
+          "date": "2025-12-27",
+          "value": 47.7
+        },
+        {
+          "date": "2026-01-03",
+          "value": 48.3
+        },
+        {
+          "date": "2026-01-10",
+          "value": 48.9
+        },
+        {
+          "date": "2026-01-17",
+          "value": 48.1
+        },
+        {
+          "date": "2026-01-24",
+          "value": 48.7
+        },
+        {
+          "date": "2026-01-31",
+          "value": 49.2
+        },
+        {
+          "date": "2026-02-07",
+          "value": 48.5
+        },
+        {
+          "date": "2026-02-14",
+          "value": 49.0
+        },
+        {
+          "date": "2026-02-21",
+          "value": 49.5
+        },
+        {
+          "date": "2026-02-28",
+          "value": 48.9
+        },
+        {
+          "date": "2026-03-07",
+          "value": 49.4
+        },
+        {
+          "date": "2026-03-14",
+          "value": 49.8
+        },
+        {
+          "date": "2026-03-21",
+          "value": 49.3
+        },
+        {
+          "date": "2026-03-28",
+          "value": 49.7
+        },
+        {
+          "date": "2026-04-04",
+          "value": 50.1
+        },
+        {
+          "date": "2026-04-11",
+          "value": 49.8
+        },
+        {
+          "date": "2026-04-18",
+          "value": 50.1
+        },
+        {
+          "date": "2026-04-25",
+          "value": 50.3
+        },
+        {
+          "date": "2026-05-02",
+          "value": 50.2
+        },
+        {
+          "date": "2026-05-09",
+          "value": 50.4
+        },
+        {
+          "date": "2026-05-16",
+          "value": 50.6
+        },
+        {
+          "date": "2026-05-23",
+          "value": 50.6
+        },
+        {
+          "date": "2026-05-30",
+          "value": 50.8
+        },
+        {
+          "date": "2026-06-06",
+          "value": 50.9
+        }
+      ]
+    },
+    "animosity": {
+      "currentValue": 82.0,
+      "oneYearMean": 81.0,
+      "fiveYearMean": 81.0,
+      "method": "curated",
+      "asOf": "2026-04-01",
+      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceLabel": "Pew Research",
+      "events": [
+        {
+          "date": "2026-04-18",
+          "text": "Pew: share calling the other party 'a threat to the nation' reaches new high in both parties."
+        },
+        {
+          "date": "2026-03-22",
+          "text": "Survey records record-low willingness to live near opposing partisans."
+        },
+        {
+          "date": "2026-02-10",
+          "text": "Affective polarization index ticks up for the eleventh straight quarter."
+        }
+      ],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 80.0
+        },
+        {
+          "date": "2025-06-21",
+          "value": 80.0
+        },
+        {
+          "date": "2025-06-28",
+          "value": 80.1
+        },
+        {
+          "date": "2025-07-05",
+          "value": 80.1
+        },
+        {
+          "date": "2025-07-12",
+          "value": 80.2
+        },
+        {
+          "date": "2025-07-19",
+          "value": 80.2
+        },
+        {
+          "date": "2025-07-26",
+          "value": 80.2
+        },
+        {
+          "date": "2025-08-02",
+          "value": 80.3
+        },
+        {
+          "date": "2025-08-09",
+          "value": 80.3
+        },
+        {
+          "date": "2025-08-16",
+          "value": 80.4
+        },
+        {
+          "date": "2025-08-23",
+          "value": 80.4
+        },
+        {
+          "date": "2025-08-30",
+          "value": 80.4
+        },
+        {
+          "date": "2025-09-06",
+          "value": 80.5
+        },
+        {
+          "date": "2025-09-13",
+          "value": 80.5
+        },
+        {
+          "date": "2025-09-20",
+          "value": 80.5
+        },
+        {
+          "date": "2025-09-27",
+          "value": 80.6
+        },
+        {
+          "date": "2025-10-04",
+          "value": 80.6
+        },
+        {
+          "date": "2025-10-11",
+          "value": 80.7
+        },
+        {
+          "date": "2025-10-18",
+          "value": 80.7
+        },
+        {
+          "date": "2025-10-25",
+          "value": 80.7
+        },
+        {
+          "date": "2025-11-01",
+          "value": 80.8
+        },
+        {
+          "date": "2025-11-08",
+          "value": 80.8
+        },
+        {
+          "date": "2025-11-15",
+          "value": 80.9
+        },
+        {
+          "date": "2025-11-22",
+          "value": 80.9
+        },
+        {
+          "date": "2025-11-29",
+          "value": 80.9
+        },
+        {
+          "date": "2025-12-06",
+          "value": 81.0
+        },
+        {
+          "date": "2025-12-13",
+          "value": 81.0
+        },
+        {
+          "date": "2025-12-20",
+          "value": 81.1
+        },
+        {
+          "date": "2025-12-27",
+          "value": 81.1
+        },
+        {
+          "date": "2026-01-03",
+          "value": 81.1
+        },
+        {
+          "date": "2026-01-10",
+          "value": 81.2
+        },
+        {
+          "date": "2026-01-17",
+          "value": 81.2
+        },
+        {
+          "date": "2026-01-24",
+          "value": 81.3
+        },
+        {
+          "date": "2026-01-31",
+          "value": 81.3
+        },
+        {
+          "date": "2026-02-07",
+          "value": 81.3
+        },
+        {
+          "date": "2026-02-14",
+          "value": 81.4
+        },
+        {
+          "date": "2026-02-21",
+          "value": 81.4
+        },
+        {
+          "date": "2026-02-28",
+          "value": 81.5
+        },
+        {
+          "date": "2026-03-07",
+          "value": 81.5
+        },
+        {
+          "date": "2026-03-14",
+          "value": 81.5
+        },
+        {
+          "date": "2026-03-21",
+          "value": 81.6
+        },
+        {
+          "date": "2026-03-28",
+          "value": 81.6
+        },
+        {
+          "date": "2026-04-04",
+          "value": 81.6
+        },
+        {
+          "date": "2026-04-11",
+          "value": 81.7
+        },
+        {
+          "date": "2026-04-18",
+          "value": 81.7
+        },
+        {
+          "date": "2026-04-25",
+          "value": 81.8
+        },
+        {
+          "date": "2026-05-02",
+          "value": 81.8
+        },
+        {
+          "date": "2026-05-09",
+          "value": 81.8
+        },
+        {
+          "date": "2026-05-16",
+          "value": 81.9
+        },
+        {
+          "date": "2026-05-23",
+          "value": 81.9
+        },
+        {
+          "date": "2026-05-30",
+          "value": 82.0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 82.0
+        }
+      ]
+    },
+    "extremism": {
+      "currentValue": 60.0,
+      "oneYearMean": 59.0,
+      "fiveYearMean": 59.0,
+      "method": "curated",
+      "asOf": "2026-05-01",
+      "sourceURL": "https://www.adl.org/resources/reports/",
+      "sourceLabel": "ADL / SPLC",
+      "events": [
+        {
+          "date": "2026-05-05",
+          "text": "ADL reports 14% rise in organized extremist incidents year-over-year."
+        },
+        {
+          "date": "2026-03-28",
+          "text": "Three militia-linked arrests across two states in one week."
+        },
+        {
+          "date": "2026-02-15",
+          "text": "SPLC adds 22 new hate-group entries in annual update."
+        }
+      ],
+      "history": [
+        {
+          "date": "2025-06-14",
+          "value": 58.0
+        },
+        {
+          "date": "2025-06-21",
+          "value": 58.0
+        },
+        {
+          "date": "2025-06-28",
+          "value": 58.1
+        },
+        {
+          "date": "2025-07-05",
+          "value": 58.1
+        },
+        {
+          "date": "2025-07-12",
+          "value": 58.2
+        },
+        {
+          "date": "2025-07-19",
+          "value": 58.2
+        },
+        {
+          "date": "2025-07-26",
+          "value": 58.2
+        },
+        {
+          "date": "2025-08-02",
+          "value": 58.3
+        },
+        {
+          "date": "2025-08-09",
+          "value": 58.3
+        },
+        {
+          "date": "2025-08-16",
+          "value": 58.4
+        },
+        {
+          "date": "2025-08-23",
+          "value": 58.4
+        },
+        {
+          "date": "2025-08-30",
+          "value": 58.4
+        },
+        {
+          "date": "2025-09-06",
+          "value": 58.5
+        },
+        {
+          "date": "2025-09-13",
+          "value": 58.5
+        },
+        {
+          "date": "2025-09-20",
+          "value": 58.5
+        },
+        {
+          "date": "2025-09-27",
+          "value": 58.6
+        },
+        {
+          "date": "2025-10-04",
+          "value": 58.6
+        },
+        {
+          "date": "2025-10-11",
+          "value": 58.7
+        },
+        {
+          "date": "2025-10-18",
+          "value": 58.7
+        },
+        {
+          "date": "2025-10-25",
+          "value": 58.7
+        },
+        {
+          "date": "2025-11-01",
+          "value": 58.8
+        },
+        {
+          "date": "2025-11-08",
+          "value": 58.8
+        },
+        {
+          "date": "2025-11-15",
+          "value": 58.9
+        },
+        {
+          "date": "2025-11-22",
+          "value": 58.9
+        },
+        {
+          "date": "2025-11-29",
+          "value": 58.9
+        },
+        {
+          "date": "2025-12-06",
+          "value": 59.0
+        },
+        {
+          "date": "2025-12-13",
+          "value": 59.0
+        },
+        {
+          "date": "2025-12-20",
+          "value": 59.1
+        },
+        {
+          "date": "2025-12-27",
+          "value": 59.1
+        },
+        {
+          "date": "2026-01-03",
+          "value": 59.1
+        },
+        {
+          "date": "2026-01-10",
+          "value": 59.2
+        },
+        {
+          "date": "2026-01-17",
+          "value": 59.2
+        },
+        {
+          "date": "2026-01-24",
+          "value": 59.3
+        },
+        {
+          "date": "2026-01-31",
+          "value": 59.3
+        },
+        {
+          "date": "2026-02-07",
+          "value": 59.3
+        },
+        {
+          "date": "2026-02-14",
+          "value": 59.4
+        },
+        {
+          "date": "2026-02-21",
+          "value": 59.4
+        },
+        {
+          "date": "2026-02-28",
+          "value": 59.5
+        },
+        {
+          "date": "2026-03-07",
+          "value": 59.5
+        },
+        {
+          "date": "2026-03-14",
+          "value": 59.5
+        },
+        {
+          "date": "2026-03-21",
+          "value": 59.6
+        },
+        {
+          "date": "2026-03-28",
+          "value": 59.6
+        },
+        {
+          "date": "2026-04-04",
+          "value": 59.6
+        },
+        {
+          "date": "2026-04-11",
+          "value": 59.7
+        },
+        {
+          "date": "2026-04-18",
+          "value": 59.7
+        },
+        {
+          "date": "2026-04-25",
+          "value": 59.8
+        },
+        {
+          "date": "2026-05-02",
+          "value": 59.8
+        },
+        {
+          "date": "2026-05-09",
+          "value": 59.8
+        },
+        {
+          "date": "2026-05-16",
+          "value": 59.9
+        },
+        {
+          "date": "2026-05-23",
+          "value": 59.9
+        },
+        {
+          "date": "2026-05-30",
+          "value": 60.0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 60.0
+        }
+      ]
+    }
+  },
+  "historicalAnalogues": [
+    {
+      "year": 1860,
+      "score": 92,
+      "label": "Pre-Civil War",
+      "note": "The final year before secession and war."
+    },
+    {
+      "year": 1932,
+      "score": 74,
+      "label": "Great Depression",
+      "note": "Economic collapse drove the deepest realignment of the 20th century."
+    },
+    {
+      "year": 1968,
+      "score": 78,
+      "label": "1968",
+      "note": "Assassinations, riots, anti-war revolt; institutional trust in free-fall."
+    },
+    {
+      "year": 1974,
+      "score": 70,
+      "label": "Watergate",
+      "note": "Trust in government cratered after the resignation of a president."
+    },
+    {
+      "year": 1995,
+      "score": 56,
+      "label": "Mid-1990s",
+      "note": "Militia movement peak; Oklahoma City bombing."
+    },
+    {
+      "year": 2008,
+      "score": 62,
+      "label": "Financial Crisis",
+      "note": "Economic stress with rising partisan animosity."
+    },
+    {
+      "year": 2020,
+      "score": 73,
+      "label": "2020 Election",
+      "note": "Pandemic, protests, a contested election."
+    },
+    {
+      "year": 2022,
+      "score": 70,
+      "label": "Post-Jan 6",
+      "note": "Sustained elevated political-violence baseline."
+    }
+  ]
+}
