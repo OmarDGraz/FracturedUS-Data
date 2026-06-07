@@ -1,0 +1,53 @@
+name: Update Fractured snapshot
+
+# Refreshes snapshot.json from FRED + GDELT + curated.json and commits it back.
+# GitHub Pages then serves the committed file to the app.
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # every Monday 13:00 UTC
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Rebuild full history from scratch (first run / reseed)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write           # allow the job to push the regenerated snapshot
+
+concurrency:
+  group: update-snapshot
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate snapshot
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}   # the only secret needed; GDELT is keyless
+        run: |
+          if [ "${{ inputs.backfill }}" = "true" ]; then
+            python3 generate_snapshot.py --backfill --out snapshot.json
+          else
+            python3 generate_snapshot.py --out snapshot.json
+          fi
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "fractured-bot"
+          git config user.email "noreply@github.com"
+          if git diff --quiet -- snapshot.json; then
+            echo "No change in snapshot.json"
+          else
+            git add snapshot.json
+            git commit -m "data: refresh snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi
