@@ -208,16 +208,33 @@ def violence_value(gcfg, mock, end_date):
 
 
 def gdelt_backfill(gcfg, dates):
-    """Weekly normalized violence values from real GDELT history. None on failure."""
+    """Weekly normalized violence values from real GDELT history. None on failure.
+    Queries in <=80-day chunks: GDELT throttles wide windows as 'larger queries',
+    so a single 1-year request gets 429'd. Small chunks + 6s spacing succeed."""
     try:
-        series = gdelt_series(gcfg, dates[0] - dt.timedelta(days=7), dates[-1])
+        start = dates[0] - dt.timedelta(days=7)
+        end = dates[-1]
+        series = []
+        chunk_start = start
+        first = True
+        while chunk_start <= end:
+            chunk_end = min(chunk_start + dt.timedelta(days=80), end)
+            if not first:
+                time.sleep(6)  # respect GDELT's 1-request / 5s limit between chunks
+            series += gdelt_series(gcfg, chunk_start, chunk_end)
+            first = False
+            chunk_start = chunk_end + dt.timedelta(days=1)
         if not series:
             raise ValueError("empty GDELT timeline")
+        smap = {}
+        for d, v in series:
+            smap[d] = v
+        ordered = sorted(smap.items())
         out = []
         for i, dte in enumerate(dates):
-            lo = dates[i - 1] if i > 0 else dates[0] - dt.timedelta(days=7)
-            window = [v for (d, v) in series if lo < d <= dte]
-            intensity = (sum(window) / len(window)) if window else series[-1][1]
+            lo = dates[i - 1] if i > 0 else start
+            window = [v for (d, v) in ordered if lo < d <= dte]
+            intensity = (sum(window) / len(window)) if window else ordered[-1][1]
             out.append(normalize(intensity, gcfg["normalize"]["lo"], gcfg["normalize"]["hi"]))
         return out
     except Exception as e:
