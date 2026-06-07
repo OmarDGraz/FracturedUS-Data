@@ -176,14 +176,15 @@ def gdelt_series(gcfg, start_date, end_date):
         "enddatetime": end_date.strftime("%Y%m%d000000"),
     }
     data = None
-    for attempt in range(3):
+    for attempt in range(5):
         try:
             data = http_get_json(gcfg["endpoint"], params)
             break
         except Exception as e:
-            if attempt < 2 and "429" in str(e):
-                print("  GDELT rate-limited; waiting 6s and retrying...")
-                time.sleep(6)
+            if attempt < 4 and "429" in str(e):
+                wait = 6 * (2 ** attempt)  # 6s, 12s, 24s, 48s — CI IPs get throttled hard
+                print(f"  GDELT rate-limited; waiting {wait}s and retrying...")
+                time.sleep(wait)
             else:
                 raise
     out = []
@@ -195,16 +196,26 @@ def gdelt_series(gcfg, start_date, end_date):
     return out
 
 
-def violence_value(gcfg, mock, end_date):
+def violence_value(gcfg, mock, end_date, fallback=None):
+    lo, hi = gcfg["normalize"]["lo"], gcfg["normalize"]["hi"]
     if mock:
-        intensity = gcfg["mockIntensity"]
-    else:
+        return normalize(gcfg["mockIntensity"], lo, hi)
+    try:
         series = gdelt_series(gcfg, end_date - dt.timedelta(days=gcfg["windowDays"]), end_date)
         vals = [v for _, v in series]
-        intensity = (sum(vals) / len(vals)) if vals else 0.0
+        if not vals:
+            raise ValueError("empty GDELT series")
+        intensity = sum(vals) / len(vals)
         print(f"  GDELT avg intensity over {gcfg['windowDays']}d = {intensity:.4f}"
               f"  (tune gdelt.normalize lo/hi around this)")
-    return normalize(intensity, gcfg["normalize"]["lo"], gcfg["normalize"]["hi"])
+        return normalize(intensity, lo, hi)
+    except Exception as e:
+        # Never crash the run: carry forward the last known value (or a neutral midpoint).
+        print(f"  WARN: GDELT current fetch failed ({e})")
+        if fallback is not None:
+            print(f"  carrying forward prior violence value {fallback}")
+            return float(fallback)
+        return normalize((lo + hi) / 2, lo, hi)
 
 
 def gdelt_backfill(gcfg, dates):
@@ -291,10 +302,18 @@ def build_snapshot(config, curated, prior, args):
     prior_factors = (prior or {}).get("factors", {})
     prior_composite_hist = (prior or {}).get("composite", {}).get("history", [])
 
-    # --- current factor values ---
+    # --- current factor values (resilient: carry forward prior value on source failure) ---
+    def prior_val(fid):
+        return (prior or {}).get("factors", {}).get(fid, {}).get("currentValue")
+
     cur_vals = {}
-    cur_vals["economy"] = economy_value(config["fred"], mock, fred_key, end_date)
-    cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date)
+    try:
+        cur_vals["economy"] = economy_value(config["fred"], mock, fred_key, end_date)
+    except Exception as e:
+        pv = prior_val("economy")
+        print(f"  WARN: economy failed ({e}); carrying forward {pv}")
+        cur_vals["economy"] = float(pv) if pv is not None else 50.0
+    cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date, fallback=prior_val("violence"))
     for fid, entry in curated["factors"].items():
         cur_vals[fid] = round(float(entry["currentValue"]), 1)
 
@@ -413,8 +432,10 @@ def main():
 
     config = load_json(os.path.join(HERE, "config.json"))
     curated = load_json(os.path.join(HERE, "curated.json"))
+    # Load prior snapshot for incremental history AND for carry-forward fallbacks
+    # (kept even in --backfill so a failed live source falls back to the last value).
     prior = None
-    if not args.backfill and os.path.exists(args.out):
+    if os.path.exists(args.out):
         try:
             prior = load_json(args.out)
         except Exception:
