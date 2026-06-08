@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-06-07",
-  "asOfLabel": "Jun 7, 2026",
-  "generatedAt": "2026-06-07T00:00:00Z",
+  "asOf": "2026-06-08",
+  "asOfLabel": "Jun 8, 2026",
+  "generatedAt": "2026-06-08T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
     "score": 67.24,
     "probability": 0.2226,
     "history": [
-      {
-        "date": "2024-06-16",
-        "score": 62.72,
-        "probability": 0.1803
-      },
       {
         "date": "2024-06-23",
         "score": 62.33,
@@ -528,13 +523,18 @@
         "date": "2026-06-07",
         "score": 67.24,
         "probability": 0.2226
+      },
+      {
+        "date": "2026-06-08",
+        "score": 67.24,
+        "probability": 0.2226
       }
     ]
   },
   "factors": {
     "polarization": {
       "currentValue": 79.0,
-      "oneYearMean": 78.0,
+      "oneYearMean": 78.1,
       "fiveYearMean": 76.8,
       "method": "curated",
       "asOf": "2026-04-01",
@@ -555,10 +555,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 74.0
-        },
         {
           "date": "2024-06-23",
           "value": 74.1
@@ -970,12 +966,16 @@
         {
           "date": "2026-06-07",
           "value": 79.0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 79.0
         }
       ]
     },
     "distrust": {
       "currentValue": 78.0,
-      "oneYearMean": 77.0,
+      "oneYearMean": 77.1,
       "fiveYearMean": 75.3,
       "method": "curated",
       "asOf": "2026-03-01",
@@ -996,10 +996,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 71.0
-        },
         {
           "date": "2024-06-23",
           "value": 71.1
@@ -1411,23 +1407,23 @@
         {
           "date": "2026-06-07",
           "value": 78.0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 78.0
         }
       ]
     },
     "violence": {
       "currentValue": 46.2,
-      "oneYearMean": 44.7,
-      "fiveYearMean": 43.2,
+      "oneYearMean": 44.8,
+      "fiveYearMean": 43.3,
       "method": "live",
-      "asOf": "2026-06-07",
+      "asOf": "2026-06-08",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 41.4
-        },
         {
           "date": "2024-06-23",
           "value": 39.1
@@ -1839,6 +1835,10 @@
         {
           "date": "2026-06-07",
           "value": 46.2
+        },
+        {
+          "date": "2026-06-08",
+          "value": 46.2
         }
       ]
     },
@@ -1847,15 +1847,11 @@
       "oneYearMean": 50.9,
       "fiveYearMean": 51.1,
       "method": "live",
-      "asOf": "2026-06-07",
+      "asOf": "2026-06-08",
       "sourceURL": "https://www.federalreserve.gov/data.htm",
       "sourceLabel": "FRED / Federal Reserve",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 53.4
-        },
         {
           "date": "2024-06-23",
           "value": 53.4
@@ -2267,12 +2263,16 @@
         {
           "date": "2026-06-07",
           "value": 51.0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 51.0
         }
       ]
     },
     "animosity": {
       "currentValue": 82.0,
-      "oneYearMean": 81.0,
+      "oneYearMean": 81.1,
       "fiveYearMean": 79.8,
       "method": "curated",
       "asOf": "2026-04-01",
@@ -2293,10 +2293,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 77.0
-        },
         {
           "date": "2024-06-23",
           "value": 77.1
@@ -2708,12 +2704,16 @@
         {
           "date": "2026-06-07",
           "value": 82.0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 82.0
         }
       ]
     },
     "extremism": {
       "currentValue": 60.0,
-      "oneYearMean": 59.0,
+      "oneYearMean": 59.1,
       "fiveYearMean": 57.8,
       "method": "curated",
       "asOf": "2026-05-01",
@@ -2734,10 +2734,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-16",
-          "value": 55.0
-        },
         {
           "date": "2024-06-23",
           "value": 55.1
@@ -3148,6 +3144,10 @@
         },
         {
           "date": "2026-06-07",
+          "value": 60.0
+        },
+        {
+          "date": "2026-06-08",
           "value": 60.0
         }
       ]
