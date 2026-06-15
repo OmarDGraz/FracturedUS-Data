@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-06-08",
-  "asOfLabel": "Jun 8, 2026",
-  "generatedAt": "2026-06-08T00:00:00Z",
+  "asOf": "2026-06-15",
+  "asOfLabel": "Jun 15, 2026",
+  "generatedAt": "2026-06-15T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 67.24,
-    "probability": 0.2226,
+    "score": 66.88,
+    "probability": 0.2191,
     "history": [
-      {
-        "date": "2024-06-23",
-        "score": 62.33,
-        "probability": 0.1769
-      },
       {
         "date": "2024-06-30",
         "score": 62.59,
@@ -528,6 +523,11 @@
         "date": "2026-06-08",
         "score": 67.24,
         "probability": 0.2226
+      },
+      {
+        "date": "2026-06-15",
+        "score": 66.88,
+        "probability": 0.2191
       }
     ]
   },
@@ -535,7 +535,7 @@
     "polarization": {
       "currentValue": 79.0,
       "oneYearMean": 78.1,
-      "fiveYearMean": 76.8,
+      "fiveYearMean": 76.9,
       "method": "curated",
       "asOf": "2026-04-01",
       "sourceURL": "https://www.pewresearch.org/politics/",
@@ -555,10 +555,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 74.1
-        },
         {
           "date": "2024-06-30",
           "value": 74.1
@@ -970,13 +966,17 @@
         {
           "date": "2026-06-08",
           "value": 79.0
+        },
+        {
+          "date": "2026-06-15",
+          "value": 79.0
         }
       ]
     },
     "distrust": {
       "currentValue": 78.0,
       "oneYearMean": 77.1,
-      "fiveYearMean": 75.3,
+      "fiveYearMean": 75.4,
       "method": "curated",
       "asOf": "2026-03-01",
       "sourceURL": "https://news.gallup.com/poll/1597/confidence-institutions.aspx",
@@ -996,10 +996,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 71.1
-        },
         {
           "date": "2024-06-30",
           "value": 71.2
@@ -1411,23 +1407,23 @@
         {
           "date": "2026-06-08",
           "value": 78.0
+        },
+        {
+          "date": "2026-06-15",
+          "value": 78.0
         }
       ]
     },
     "violence": {
-      "currentValue": 46.2,
+      "currentValue": 44.4,
       "oneYearMean": 44.8,
       "fiveYearMean": 43.3,
       "method": "live",
-      "asOf": "2026-06-08",
+      "asOf": "2026-06-15",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 39.1
-        },
         {
           "date": "2024-06-30",
           "value": 40.3
@@ -1839,6 +1835,10 @@
         {
           "date": "2026-06-08",
           "value": 46.2
+        },
+        {
+          "date": "2026-06-15",
+          "value": 44.4
         }
       ]
     },
@@ -1847,15 +1847,11 @@
       "oneYearMean": 50.9,
       "fiveYearMean": 51.1,
       "method": "live",
-      "asOf": "2026-06-08",
+      "asOf": "2026-06-15",
       "sourceURL": "https://www.federalreserve.gov/data.htm",
       "sourceLabel": "FRED / Federal Reserve",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 53.4
-        },
         {
           "date": "2024-06-30",
           "value": 53.4
@@ -2267,13 +2263,17 @@
         {
           "date": "2026-06-08",
           "value": 51.0
+        },
+        {
+          "date": "2026-06-15",
+          "value": 51.0
         }
       ]
     },
     "animosity": {
       "currentValue": 82.0,
       "oneYearMean": 81.1,
-      "fiveYearMean": 79.8,
+      "fiveYearMean": 79.9,
       "method": "curated",
       "asOf": "2026-04-01",
       "sourceURL": "https://www.pewresearch.org/politics/",
@@ -2293,10 +2293,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 77.1
-        },
         {
           "date": "2024-06-30",
           "value": 77.1
@@ -2708,13 +2704,17 @@
         {
           "date": "2026-06-08",
           "value": 82.0
+        },
+        {
+          "date": "2026-06-15",
+          "value": 82.0
         }
       ]
     },
     "extremism": {
       "currentValue": 60.0,
       "oneYearMean": 59.1,
-      "fiveYearMean": 57.8,
+      "fiveYearMean": 57.9,
       "method": "curated",
       "asOf": "2026-05-01",
       "sourceURL": "https://www.adl.org/resources/reports/",
@@ -2734,10 +2734,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-23",
-          "value": 55.1
-        },
         {
           "date": "2024-06-30",
           "value": 55.1
@@ -3148,6 +3144,10 @@
         },
         {
           "date": "2026-06-08",
+          "value": 60.0
+        },
+        {
+          "date": "2026-06-15",
           "value": 60.0
         }
       ]
