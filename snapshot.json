@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-06-15",
-  "asOfLabel": "Jun 15, 2026",
-  "generatedAt": "2026-06-15T00:00:00Z",
+  "asOf": "2026-06-22",
+  "asOfLabel": "Jun 22, 2026",
+  "generatedAt": "2026-06-22T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 66.88,
-    "probability": 0.2191,
+    "score": 66.51,
+    "probability": 0.2154,
     "history": [
-      {
-        "date": "2024-06-30",
-        "score": 62.59,
-        "probability": 0.1791
-      },
       {
         "date": "2024-07-07",
         "score": 62.81,
@@ -528,6 +523,11 @@
         "date": "2026-06-15",
         "score": 66.88,
         "probability": 0.2191
+      },
+      {
+        "date": "2026-06-22",
+        "score": 66.51,
+        "probability": 0.2154
       }
     ]
   },
@@ -555,10 +555,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 74.1
-        },
         {
           "date": "2024-07-07",
           "value": 74.2
@@ -970,13 +966,17 @@
         {
           "date": "2026-06-15",
           "value": 79.0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 79.0
         }
       ]
     },
     "distrust": {
       "currentValue": 78.0,
       "oneYearMean": 77.1,
-      "fiveYearMean": 75.4,
+      "fiveYearMean": 75.5,
       "method": "curated",
       "asOf": "2026-03-01",
       "sourceURL": "https://news.gallup.com/poll/1597/confidence-institutions.aspx",
@@ -996,10 +996,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 71.2
-        },
         {
           "date": "2024-07-07",
           "value": 71.3
@@ -1411,23 +1407,23 @@
         {
           "date": "2026-06-15",
           "value": 78.0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 78.0
         }
       ]
     },
     "violence": {
-      "currentValue": 44.4,
+      "currentValue": 43.0,
       "oneYearMean": 44.8,
       "fiveYearMean": 43.3,
       "method": "live",
-      "asOf": "2026-06-15",
+      "asOf": "2026-06-22",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 40.3
-        },
         {
           "date": "2024-07-07",
           "value": 41.5
@@ -1839,23 +1835,23 @@
         {
           "date": "2026-06-15",
           "value": 44.4
+        },
+        {
+          "date": "2026-06-22",
+          "value": 43.0
         }
       ]
     },
     "economy": {
-      "currentValue": 51.0,
+      "currentValue": 50.1,
       "oneYearMean": 50.9,
       "fiveYearMean": 51.1,
       "method": "live",
-      "asOf": "2026-06-15",
+      "asOf": "2026-06-22",
       "sourceURL": "https://www.federalreserve.gov/data.htm",
       "sourceLabel": "FRED / Federal Reserve",
       "events": [],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 53.4
-        },
         {
           "date": "2024-07-07",
           "value": 52.6
@@ -2267,6 +2263,10 @@
         {
           "date": "2026-06-15",
           "value": 51.0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 50.1
         }
       ]
     },
@@ -2293,10 +2293,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 77.1
-        },
         {
           "date": "2024-07-07",
           "value": 77.2
@@ -2708,6 +2704,10 @@
         {
           "date": "2026-06-15",
           "value": 82.0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 82.0
         }
       ]
     },
@@ -2734,10 +2734,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-06-30",
-          "value": 55.1
-        },
         {
           "date": "2024-07-07",
           "value": 55.2
@@ -3148,6 +3144,10 @@
         },
         {
           "date": "2026-06-15",
+          "value": 60.0
+        },
+        {
+          "date": "2026-06-22",
           "value": 60.0
         }
       ]
