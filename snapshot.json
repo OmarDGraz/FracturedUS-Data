@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-07-06",
-  "asOfLabel": "Jul 6, 2026",
-  "generatedAt": "2026-07-06T00:00:00Z",
+  "asOf": "2026-07-13",
+  "asOfLabel": "Jul 13, 2026",
+  "generatedAt": "2026-07-13T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
     "score": 65.93,
     "probability": 0.2099,
     "history": [
-      {
-        "date": "2024-07-21",
-        "score": 62.7,
-        "probability": 0.1801
-      },
       {
         "date": "2024-07-28",
         "score": 63.01,
@@ -528,6 +523,11 @@
         "date": "2026-07-06",
         "score": 65.93,
         "probability": 0.2099
+      },
+      {
+        "date": "2026-07-13",
+        "score": 65.93,
+        "probability": 0.2099
       }
     ]
   },
@@ -555,10 +555,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 74.3
-        },
         {
           "date": "2024-07-28",
           "value": 74.4
@@ -970,6 +966,10 @@
         {
           "date": "2026-07-06",
           "value": 79.0
+        },
+        {
+          "date": "2026-07-13",
+          "value": 79.0
         }
       ]
     },
@@ -996,10 +996,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 71.5
-        },
         {
           "date": "2024-07-28",
           "value": 71.6
@@ -1411,23 +1407,23 @@
         {
           "date": "2026-07-06",
           "value": 78.0
+        },
+        {
+          "date": "2026-07-13",
+          "value": 78.0
         }
       ]
     },
     "violence": {
       "currentValue": 40.1,
-      "oneYearMean": 44.7,
-      "fiveYearMean": 43.4,
+      "oneYearMean": 44.6,
+      "fiveYearMean": 43.3,
       "method": "live",
-      "asOf": "2026-07-06",
+      "asOf": "2026-07-13",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 40.5
-        },
         {
           "date": "2024-07-28",
           "value": 41.7
@@ -1839,6 +1835,10 @@
         {
           "date": "2026-07-06",
           "value": 40.1
+        },
+        {
+          "date": "2026-07-13",
+          "value": 40.1
         }
       ]
     },
@@ -1847,15 +1847,11 @@
       "oneYearMean": 50.9,
       "fiveYearMean": 51.0,
       "method": "live",
-      "asOf": "2026-07-06",
+      "asOf": "2026-07-13",
       "sourceURL": "https://www.federalreserve.gov/data.htm",
       "sourceLabel": "FRED / Federal Reserve",
       "events": [],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 52.6
-        },
         {
           "date": "2024-07-28",
           "value": 52.6
@@ -2267,6 +2263,10 @@
         {
           "date": "2026-07-06",
           "value": 50.1
+        },
+        {
+          "date": "2026-07-13",
+          "value": 50.1
         }
       ]
     },
@@ -2293,10 +2293,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 77.3
-        },
         {
           "date": "2024-07-28",
           "value": 77.4
@@ -2708,6 +2704,10 @@
         {
           "date": "2026-07-06",
           "value": 82.0
+        },
+        {
+          "date": "2026-07-13",
+          "value": 82.0
         }
       ]
     },
@@ -2734,10 +2734,6 @@
         }
       ],
       "history": [
-        {
-          "date": "2024-07-21",
-          "value": 55.3
-        },
         {
           "date": "2024-07-28",
           "value": 55.4
@@ -3148,6 +3144,10 @@
         },
         {
           "date": "2026-07-06",
+          "value": 60.0
+        },
+        {
+          "date": "2026-07-13",
           "value": 60.0
         }
       ]
