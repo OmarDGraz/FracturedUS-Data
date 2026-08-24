@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-08-17",
-  "asOfLabel": "Aug 17, 2026",
-  "generatedAt": "2026-08-17T00:00:00Z",
+  "asOf": "2026-08-24",
+  "asOfLabel": "Aug 24, 2026",
+  "generatedAt": "2026-08-24T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 64.38,
-    "probability": 0.1952,
+    "score": 64.18,
+    "probability": 0.1934,
     "history": [
-      {
-        "date": "2024-09-01",
-        "score": 63.02,
-        "probability": 0.1829
-      },
       {
         "date": "2024-09-08",
         "score": 63.33,
@@ -528,6 +523,11 @@
         "date": "2026-08-17",
         "score": 64.38,
         "probability": 0.1952
+      },
+      {
+        "date": "2026-08-24",
+        "score": 64.18,
+        "probability": 0.1934
       }
     ]
   },
@@ -542,10 +542,6 @@
       "sourceLabel": "Pew Research",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 74.6
-        },
         {
           "date": "2024-09-08",
           "value": 74.7
@@ -957,23 +953,23 @@
         {
           "date": "2026-08-17",
           "value": 79.0
+        },
+        {
+          "date": "2026-08-24",
+          "value": 79.0
         }
       ]
     },
     "distrust": {
       "currentValue": 78.0,
       "oneYearMean": 77.4,
-      "fiveYearMean": 75.9,
+      "fiveYearMean": 76.0,
       "method": "curated",
       "asOf": "2026-03-01",
       "sourceURL": "https://news.gallup.com/poll/1597/confidence-institutions.aspx",
       "sourceLabel": "Gallup",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 72.1
-        },
         {
           "date": "2024-09-08",
           "value": 72.2
@@ -1385,23 +1381,23 @@
         {
           "date": "2026-08-17",
           "value": 78.0
+        },
+        {
+          "date": "2026-08-24",
+          "value": 78.0
         }
       ]
     },
     "violence": {
-      "currentValue": 32.8,
-      "oneYearMean": 43.8,
-      "fiveYearMean": 43.1,
+      "currentValue": 31.8,
+      "oneYearMean": 43.6,
+      "fiveYearMean": 43.0,
       "method": "live",
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-24",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 40.8
-        },
         {
           "date": "2024-09-08",
           "value": 42.0
@@ -1813,6 +1809,10 @@
         {
           "date": "2026-08-17",
           "value": 32.8
+        },
+        {
+          "date": "2026-08-24",
+          "value": 31.8
         }
       ]
     },
@@ -1821,15 +1821,11 @@
       "oneYearMean": 50.7,
       "fiveYearMean": 50.8,
       "method": "live",
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-24",
       "sourceURL": "https://www.federalreserve.gov/data.htm",
       "sourceLabel": "FRED / Federal Reserve",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 52.6
-        },
         {
           "date": "2024-09-08",
           "value": 52.6
@@ -2241,6 +2237,10 @@
         {
           "date": "2026-08-17",
           "value": 49.2
+        },
+        {
+          "date": "2026-08-24",
+          "value": 49.2
         }
       ]
     },
@@ -2254,10 +2254,6 @@
       "sourceLabel": "Pew Research",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 77.6
-        },
         {
           "date": "2024-09-08",
           "value": 77.7
@@ -2669,6 +2665,10 @@
         {
           "date": "2026-08-17",
           "value": 82.0
+        },
+        {
+          "date": "2026-08-24",
+          "value": 82.0
         }
       ]
     },
@@ -2682,10 +2682,6 @@
       "sourceLabel": "ADL / SPLC",
       "events": [],
       "history": [
-        {
-          "date": "2024-09-01",
-          "value": 55.6
-        },
         {
           "date": "2024-09-08",
           "value": 55.7
@@ -3096,6 +3092,10 @@
         },
         {
           "date": "2026-08-17",
+          "value": 60.0
+        },
+        {
+          "date": "2026-08-24",
           "value": 60.0
         }
       ]
