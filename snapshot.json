@@ -6,8 +6,8 @@
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 64.18,
-    "probability": 0.1934,
+    "score": 64.2,
+    "probability": 0.1936,
     "history": [
       {
         "date": "2024-09-08",
@@ -521,8 +521,8 @@
       },
       {
         "date": "2026-08-31",
-        "score": 64.18,
-        "probability": 0.1934
+        "score": 64.2,
+        "probability": 0.1936
       }
     ]
   },
@@ -1384,7 +1384,7 @@
       ]
     },
     "violence": {
-      "currentValue": 31.8,
+      "currentValue": 31.9,
       "oneYearMean": 38.3,
       "fiveYearMean": 37.6,
       "method": "live",
@@ -1803,7 +1803,7 @@
         },
         {
           "date": "2026-08-31",
-          "value": 31.8
+          "value": 31.9
         }
       ]
     },
