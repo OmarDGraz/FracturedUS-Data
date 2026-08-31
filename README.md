@@ -1,7 +1,9 @@
 # Fractured: US — data pipeline
 
 Generates `snapshot.json` (schema v2) from real sources and publishes it via GitHub Pages.
-The iOS app fetches that file. **Full setup: see `../GENUINE-DATA-SETUP.md`.**
+That publisher is intentionally retained for older app installs. Current releases fetch the
+mirrored payload from `https://stacktrace-studios.com/data/fracturedus/snapshot.json`.
+**Full setup: see `../GENUINE-DATA-SETUP.md`.**
 
 ## Sources
 | Factor | Source | Method |

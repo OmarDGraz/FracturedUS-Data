@@ -61,7 +61,7 @@ def sigmoid_probability(score, p):
     return round(sig * p["span"] + p["floor"], 4)
 
 
-def http_get_json(url, params, timeout=40):
+def http_get_json(url, params, timeout=90):
     q = urllib.parse.urlencode(params)
     full = f"{url}?{q}"
     req = urllib.request.Request(full, headers={"User-Agent": "FracturedUS-pipeline/1.0"})
@@ -176,14 +176,18 @@ def gdelt_series(gcfg, start_date, end_date):
         "enddatetime": end_date.strftime("%Y%m%d000000"),
     }
     data = None
-    for attempt in range(5):
+    for attempt in range(6):
         try:
             data = http_get_json(gcfg["endpoint"], params)
             break
         except Exception as e:
-            if attempt < 4 and "429" in str(e):
-                wait = 6 * (2 ** attempt)  # 6s, 12s, 24s, 48s — CI IPs get throttled hard
-                print(f"  GDELT rate-limited; waiting {wait}s and retrying...")
+            # A throttled GDELT request usually manifests as a TIMEOUT, not as a
+            # 429. Retrying only on the literal "429" meant the common case fell
+            # straight through to `raise`, and the caller silently substituted a
+            # synthetic ramp. Back off on anything.
+            if attempt < 5:
+                wait = 20 * (attempt + 1)
+                print(f"  GDELT retry {attempt + 1}/6 in {wait}s ({type(e).__name__}: {str(e)[:70]})")
                 time.sleep(wait)
             else:
                 raise
@@ -231,7 +235,10 @@ def gdelt_backfill(gcfg, dates):
         while chunk_start <= end:
             chunk_end = min(chunk_start + dt.timedelta(days=80), end)
             if not first:
-                time.sleep(6)  # respect GDELT's 1-request / 5s limit between chunks
+                # Measured: GDELT answers in 20-35s and 429s aggressively at
+                # roughly one request per 6s. 25s between chunks completes a
+                # 104-week backfill; 6s does not.
+                time.sleep(25)
             series += gdelt_series(gcfg, chunk_start, chunk_end)
             first = False
             chunk_start = chunk_end + dt.timedelta(days=1)
@@ -307,13 +314,25 @@ def build_snapshot(config, curated, prior, args):
         return (prior or {}).get("factors", {}).get(fid, {}).get("currentValue")
 
     cur_vals = {}
+    # Tracks whether each live factor's CURRENT value came from its named source
+    # on this run. A value that was carried forward is not an observation, and
+    # must not be published wearing the source's label.
+    observed = {}
     try:
         cur_vals["economy"] = economy_value(config["fred"], mock, fred_key, end_date)
+        observed["economy"] = True
     except Exception as e:
         pv = prior_val("economy")
         print(f"  WARN: economy failed ({e}); carrying forward {pv}")
-        cur_vals["economy"] = float(pv) if pv is not None else 50.0
-    cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date, fallback=prior_val("violence"))
+        if pv is None:
+            sys.exit("  economy has no prior value to carry forward — refusing to "
+                     "publish a placeholder as a Federal Reserve measurement.")
+        cur_vals["economy"] = float(pv)
+        observed["economy"] = False
+    prior_violence = prior_val("violence")
+    cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date, fallback=prior_violence)
+    observed["violence"] = not (
+        prior_violence is not None and cur_vals["violence"] == float(prior_violence))
     for fid, entry in curated["factors"].items():
         cur_vals[fid] = round(float(entry["currentValue"]), 1)
 
@@ -324,12 +343,24 @@ def build_snapshot(config, curated, prior, args):
         for fid in config["factors"]:
             if fid in curated["factors"]:
                 vals = curated_trajectory(curated["factors"][fid], dates)
-            elif fid == "economy":
-                vals = (None if mock else fred_backfill(config["fred"], fred_key, dates)) \
-                       or live_trajectory_mock(cur_vals[fid], dates)
-            elif fid == "violence":
-                vals = (None if mock else gdelt_backfill(config["gdelt"], dates)) \
-                       or live_trajectory_mock(cur_vals[fid], dates)
+            elif fid in ("economy", "violence"):
+                fetched = None
+                if not mock:
+                    fetched = (fred_backfill(config["fred"], fred_key, dates)
+                               if fid == "economy"
+                               else gdelt_backfill(config["gdelt"], dates))
+                if fetched is None:
+                    if mock:
+                        vals = live_trajectory_mock(cur_vals[fid], dates)
+                    else:
+                        # This is how 92 of 104 published violence points became a
+                        # straight line from current-6.0 wearing a GDELT label.
+                        # A backfill that cannot reach its source has nothing to
+                        # publish; say so and stop rather than invent a trend.
+                        sys.exit(f"  {fid} backfill could not reach its source. Re-run when it "
+                                 f"responds — a synthesized ramp must not ship as {fid} history.")
+                else:
+                    vals = fetched
             else:
                 vals = live_trajectory_mock(cur_vals[fid], dates)
             if fid not in curated["factors"]:
@@ -358,11 +389,20 @@ def build_snapshot(config, curated, prior, args):
                     "sourceLabel": config["gdelt"]["sourceLabel"], "events": []}
         hist = factor_hist[fid]
         vals = [p["value"] for p in hist]
+        # For a curated factor the published means come from the source. Taking
+        # the mean of our own monotone interpolation overwrote them and drifted
+        # further from the source with every weekly append.
+        c_entry = curated["factors"].get(fid, {})
+        one_year = c_entry.get("oneYearMean") if fid in curated["factors"] else None
+        long_run = c_entry.get("fiveYearMean") if fid in curated["factors"] else None
         factors_out[fid] = {
             "currentValue": cur_vals[fid],
-            "oneYearMean": round(sum(vals[-52:]) / len(vals[-52:]), 1),
-            "fiveYearMean": round(sum(vals) / len(vals), 1),
-            "method": fcfg["method"],
+            "oneYearMean": one_year if one_year is not None
+                           else round(sum(vals[-52:]) / len(vals[-52:]), 1),
+            "fiveYearMean": long_run if long_run is not None
+                            else round(sum(vals) / len(vals), 1),
+            "method": ("live" if observed.get(fid, True) else "stale")
+                      if fcfg["method"] == "live" else fcfg["method"],
             **meta,
             "history": hist,
         }

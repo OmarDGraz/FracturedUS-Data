@@ -1,13 +1,12 @@
 {
-  "_comment": "Slow-moving factors with no public API. Update currentValue + asOf + events when a new Pew/Gallup/ADL/SPLC report drops (quarterly to yearly). oneYearMean/fiveYearMean anchor the backfilled history trajectory. Values are 0-100.",
-
+  "_comment": "Slow-moving factors with no public API. Update currentValue + asOf when a new Pew/Gallup/ADL/SPLC report drops (quarterly to yearly). oneYearMean/fiveYearMean anchor the backfilled history trajectory. Values are 0-100. IMPORTANT: the 'events' arrays feed the app's 'RECENT EVENTS' list and are shown to users as real, sourced news. Only add an event you can tie to a specific published report or news item \u2014 include an 'url'. Leave the array empty rather than inventing plausible-sounding placeholders.",
   "factors": {
     "polarization": {
       "currentValue": 79,
       "oneYearMean": 77,
       "fiveYearMean": 74,
       "asOf": "2026-04-01",
-      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceURL": "https://www.pewresearch.org/topic/politics-policy/",
       "sourceLabel": "Pew Research",
       "events": []
     },
@@ -25,7 +24,7 @@
       "oneYearMean": 80,
       "fiveYearMean": 77,
       "asOf": "2026-04-01",
-      "sourceURL": "https://www.pewresearch.org/politics/",
+      "sourceURL": "https://www.pewresearch.org/topic/politics-policy/",
       "sourceLabel": "Pew Research",
       "events": []
     },
@@ -34,20 +33,59 @@
       "oneYearMean": 58,
       "fiveYearMean": 55,
       "asOf": "2026-05-01",
-      "sourceURL": "https://www.adl.org/resources/reports/",
+      "sourceURL": "https://www.adl.org/research-centers/center-on-extremism",
       "sourceLabel": "ADL / SPLC",
       "events": []
     }
   },
-
   "historicalAnalogues": [
-    { "year": 1860, "score": 92, "label": "Pre-Civil War",    "note": "The year secession began; South Carolina left the Union that December." },
-    { "year": 1932, "score": 74, "label": "Great Depression", "note": "Economic collapse drove the deepest realignment of the 20th century." },
-    { "year": 1968, "score": 78, "label": "1968",             "note": "Assassinations, riots, anti-war revolt; institutional trust in free-fall." },
-    { "year": 1974, "score": 70, "label": "Watergate",        "note": "Trust in government cratered after the resignation of a president." },
-    { "year": 1995, "score": 56, "label": "Mid-1990s",        "note": "Militia movement peak; Oklahoma City bombing." },
-    { "year": 2008, "score": 62, "label": "Financial Crisis", "note": "Economic stress with rising partisan animosity." },
-    { "year": 2020, "score": 73, "label": "2020 Election",    "note": "Pandemic, protests, a contested election." },
-    { "year": 2022, "score": 70, "label": "Post-Jan 6",       "note": "Sustained elevated political-violence baseline." }
+    {
+      "year": 1860,
+      "score": 92,
+      "label": "Pre-Civil War",
+      "note": "The year secession began; South Carolina left the Union that December."
+    },
+    {
+      "year": 1932,
+      "score": 74,
+      "label": "Great Depression",
+      "note": "Economic collapse drove the deepest realignment of the 20th century."
+    },
+    {
+      "year": 1968,
+      "score": 78,
+      "label": "1968",
+      "note": "Assassinations, riots, anti-war revolt; institutional trust in free-fall."
+    },
+    {
+      "year": 1974,
+      "score": 70,
+      "label": "Watergate",
+      "note": "Trust in government cratered after the resignation of a president."
+    },
+    {
+      "year": 1995,
+      "score": 56,
+      "label": "Mid-1990s",
+      "note": "Militia movement peak; Oklahoma City bombing."
+    },
+    {
+      "year": 2008,
+      "score": 62,
+      "label": "Financial Crisis",
+      "note": "Economic stress with rising partisan animosity."
+    },
+    {
+      "year": 2020,
+      "score": 73,
+      "label": "2020 Election",
+      "note": "Pandemic, protests, a contested election."
+    },
+    {
+      "year": 2022,
+      "score": 70,
+      "label": "Post-Jan 6",
+      "note": "Sustained elevated political-violence baseline."
+    }
   ]
 }
