@@ -86,25 +86,40 @@ jobs:
           put "fracturedus/snapshot.json"
           echo "uploaded $ASOF (${SHA:0:16})"
 
+      # Fail at the FIRST missed run, not at the 21-day cliff. The previous
+      # outage was invisible until someone curled the endpoint by hand.
       - name: Verify the canonical endpoint
         run: |
           set -euo pipefail
-          sleep 15
-          curl --fail --silent --show-error -H 'Cache-Control: no-cache' \
-            -o live.json https://stacktrace-studios.com/data/fracturedus/snapshot.json
           LOCAL=$(shasum -a 256 snapshot.json | cut -d' ' -f1)
-          LIVE=$(shasum -a 256 live.json | cut -d' ' -f1)
-          if [ "$LOCAL" != "$LIVE" ]; then
-            echo "::error::endpoint is not serving what was just uploaded"
-            echo "  uploaded $LOCAL"
-            echo "  serving  $LIVE"
-            exit 1
-          fi
+          # The Function sets max-age=600 and routes on the filename alone, so a
+          # query string busts the edge cache without changing what is served.
+          # Without this the read-back compares against the PREVIOUS upload for
+          # up to ten minutes and reports a correct feed as broken — which it did.
+          URL="https://stacktrace-studios.com/data/fracturedus/snapshot.json?cb=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          for attempt in 1 2 3 4 5 6; do
+            curl --fail --silent --show-error -H 'Cache-Control: no-cache' -o live.json "$URL" || true
+            LIVE=$(shasum -a 256 live.json 2>/dev/null | cut -d' ' -f1 || echo none)
+            if [ "$LOCAL" = "$LIVE" ]; then
+              echo "endpoint matches on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" = "6" ]; then
+              echo "::error::endpoint is not serving what was just uploaded"
+              echo "  uploaded $LOCAL"
+              echo "  serving  $LIVE"
+              exit 1
+            fi
+            echo "  attempt $attempt: not yet propagated, retrying in 20s"
+            sleep 20
+          done
           python3 - <<'CHECK'
           import json, datetime, sys
           d = json.load(open('live.json'))
           age = (datetime.date.today() - datetime.date.fromisoformat(d['asOf'])).days
           print(f"endpoint asOf {d['asOf']} ({age}d), composite {d['composite']['score']}")
+          for fid, f in sorted(d['factors'].items()):
+              print(f"  {fid:13} {f['method']:8} {f['currentValue']:5.1f}")
           if age > 10:
               print(f"::error::feed is {age} days old; the serving layer has stopped tracking the generator")
               sys.exit(1)

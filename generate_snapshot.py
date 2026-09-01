@@ -201,9 +201,14 @@ def gdelt_series(gcfg, start_date, end_date):
 
 
 def violence_value(gcfg, mock, end_date, fallback=None):
+    """Returns (value, observed). `observed` is False when the value was carried
+    forward, and must not be inferred by comparing against the prior reading:
+    a real observation that happens to repeat last week's number is still an
+    observation, and inferring made the backfill publish a live GDELT fetch as
+    method="stale"."""
     lo, hi = gcfg["normalize"]["lo"], gcfg["normalize"]["hi"]
     if mock:
-        return normalize(gcfg["mockIntensity"], lo, hi)
+        return normalize(gcfg["mockIntensity"], lo, hi), True
     try:
         series = gdelt_series(gcfg, end_date - dt.timedelta(days=gcfg["windowDays"]), end_date)
         vals = [v for _, v in series]
@@ -212,14 +217,14 @@ def violence_value(gcfg, mock, end_date, fallback=None):
         intensity = sum(vals) / len(vals)
         print(f"  GDELT avg intensity over {gcfg['windowDays']}d = {intensity:.4f}"
               f"  (tune gdelt.normalize lo/hi around this)")
-        return normalize(intensity, lo, hi)
+        return normalize(intensity, lo, hi), True
     except Exception as e:
-        # Never crash the run: carry forward the last known value (or a neutral midpoint).
         print(f"  WARN: GDELT current fetch failed ({e})")
         if fallback is not None:
             print(f"  carrying forward prior violence value {fallback}")
-            return float(fallback)
-        return normalize((lo + hi) / 2, lo, hi)
+            return float(fallback), False
+        sys.exit("  violence has no prior value to carry forward — refusing to publish "
+                 "a midpoint placeholder as a GDELT measurement.")
 
 
 def gdelt_backfill(gcfg, dates):
@@ -305,18 +310,18 @@ def polarization_value(vcfg, mock, end_date, fallback=None):
     """
     n = vcfg["normalize"]
     if mock:
-        return normalize(vcfg["mockDistance"], n["lo"], n["hi"])
+        return normalize(vcfg["mockDistance"], n["lo"], n["hi"]), True
     try:
         dist = _voteview_distances(vcfg)
         congress = _congress_for(end_date)
         while congress not in dist and congress > 1:
             congress -= 1          # newest Congress present at or before this date
-        return normalize(dist[congress], n["lo"], n["hi"])
+        return normalize(dist[congress], n["lo"], n["hi"]), True
     except Exception as e:
         print(f"  WARN: polarization failed ({e})")
         if fallback is not None:
             print(f"  carrying forward prior polarization value {fallback}")
-            return float(fallback)
+            return float(fallback), False
         raise
 
 
@@ -406,15 +411,10 @@ def build_snapshot(config, curated, prior, args):
                      "publish a placeholder as a Federal Reserve measurement.")
         cur_vals["economy"] = float(pv)
         observed["economy"] = False
-    prior_violence = prior_val("violence")
-    cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date, fallback=prior_violence)
-    observed["violence"] = not (
-        prior_violence is not None and cur_vals["violence"] == float(prior_violence))
-    prior_pol = prior_val("polarization")
-    cur_vals["polarization"] = polarization_value(
-        config["voteview"], mock, end_date, fallback=prior_pol)
-    observed["polarization"] = not (
-        prior_pol is not None and cur_vals["polarization"] == float(prior_pol))
+    cur_vals["violence"], observed["violence"] = violence_value(
+        config["gdelt"], mock, end_date, fallback=prior_val("violence"))
+    cur_vals["polarization"], observed["polarization"] = polarization_value(
+        config["voteview"], mock, end_date, fallback=prior_val("polarization"))
     for fid, entry in curated["factors"].items():
         if fid in cur_vals:
             continue          # a live source already produced this one
