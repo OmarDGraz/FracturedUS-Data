@@ -471,18 +471,21 @@ def build_snapshot(config, curated, prior, args):
     # --- factor entries (metadata + history) ---
     factors_out = {}
     for fid, fcfg in config["factors"].items():
-        if fid in curated["factors"]:
-            c = curated["factors"][fid]
-            meta = {"asOf": c.get("asOf", end_date.isoformat()),
-                    "sourceURL": c.get("sourceURL", ""), "sourceLabel": c.get("sourceLabel", ""),
-                    "events": c.get("events", [])}
-        elif fcfg.get("source") == "voteview":
+        # A configured live source wins over any leftover curated entry. Checking
+        # curated first meant polarization was fetched from Voteview and then
+        # published crediting Pew, because its old curated block still existed.
+        if fcfg.get("source") == "voteview":
             v = config["voteview"]
             meta = {"asOf": end_date.isoformat(), "sourceURL": v["sourceURL"],
                     "sourceLabel": v["sourceLabel"], "events": []}
         elif fcfg.get("source") == "fred":
             meta = {"asOf": end_date.isoformat(), "sourceURL": config["fred"]["sourceURL"],
                     "sourceLabel": config["fred"]["sourceLabel"], "events": []}
+        elif fid in curated["factors"]:
+            c = curated["factors"][fid]
+            meta = {"asOf": c.get("asOf", end_date.isoformat()),
+                    "sourceURL": c.get("sourceURL", ""), "sourceLabel": c.get("sourceLabel", ""),
+                    "events": c.get("events", [])}
         else:  # gdelt
             meta = {"asOf": end_date.isoformat(), "sourceURL": config["gdelt"]["sourceURL"],
                     "sourceLabel": config["gdelt"]["sourceLabel"], "events": []}
