@@ -260,6 +260,83 @@ def gdelt_backfill(gcfg, dates):
         return None
 
 
+
+# ---------- polarization (Voteview DW-NOMINATE) ----------
+
+def _congress_for(d):
+    """Congress in session on a date. The Nth Congress convenes 3 Jan of the
+    odd year 1789 + (N-1)*2 and sits two years."""
+    year = d.year if (d.month, d.day) >= (1, 3) else d.year - 1
+    if year % 2 == 0:
+        year -= 1
+    return (year - 1789) // 2 + 1
+
+
+def _voteview_distances(vcfg):
+    """{congress: |R median - D median|} on the first DW-NOMINATE dimension."""
+    import csv, io
+    req = urllib.request.Request(vcfg["endpoint"],
+                                 headers={"User-Agent": "FracturedUS-pipeline/1.0"})
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        text = resp.read().decode("utf-8")
+    medians = {}
+    for row in csv.DictReader(io.StringIO(text)):
+        if row.get("chamber") != vcfg.get("chamber", "House"):
+            continue
+        if row.get("party_code") not in ("100", "200"):
+            continue
+        value = row.get("nominate_dim1_median")
+        if not value:
+            continue
+        medians.setdefault(int(row["congress"]), {})[row["party_code"]] = float(value)
+    out = {c: abs(v["200"] - v["100"])
+           for c, v in medians.items() if "100" in v and "200" in v}
+    if not out:
+        raise ValueError("no usable party medians in the Voteview table")
+    return out
+
+
+def polarization_value(vcfg, mock, end_date, fallback=None):
+    """Party-median ideological distance, normalized to 0-100.
+
+    Replaces a hand-typed constant with the published measure the app already
+    claims this factor is. It changes per Congress, not per week — the factor's
+    own asOf carries the real observation date so the UI can say so.
+    """
+    n = vcfg["normalize"]
+    if mock:
+        return normalize(vcfg["mockDistance"], n["lo"], n["hi"])
+    try:
+        dist = _voteview_distances(vcfg)
+        congress = _congress_for(end_date)
+        while congress not in dist and congress > 1:
+            congress -= 1          # newest Congress present at or before this date
+        return normalize(dist[congress], n["lo"], n["hi"])
+    except Exception as e:
+        print(f"  WARN: polarization failed ({e})")
+        if fallback is not None:
+            print(f"  carrying forward prior polarization value {fallback}")
+            return float(fallback)
+        raise
+
+
+def polarization_backfill(vcfg, dates):
+    """Real per-Congress history: a step function, because that is what it is."""
+    n = vcfg["normalize"]
+    try:
+        dist = _voteview_distances(vcfg)
+    except Exception as e:
+        print(f"  (polarization backfill failed: {e})")
+        return None
+    out = []
+    for d in dates:
+        c = _congress_for(d)
+        while c not in dist and c > 1:
+            c -= 1
+        out.append(normalize(dist[c], n["lo"], n["hi"]))
+    return out
+
+
 # ---------- curated factor backfill (interpolate published reference points) ----------
 
 def curated_trajectory(entry, dates):
@@ -333,7 +410,14 @@ def build_snapshot(config, curated, prior, args):
     cur_vals["violence"] = violence_value(config["gdelt"], mock, end_date, fallback=prior_violence)
     observed["violence"] = not (
         prior_violence is not None and cur_vals["violence"] == float(prior_violence))
+    prior_pol = prior_val("polarization")
+    cur_vals["polarization"] = polarization_value(
+        config["voteview"], mock, end_date, fallback=prior_pol)
+    observed["polarization"] = not (
+        prior_pol is not None and cur_vals["polarization"] == float(prior_pol))
     for fid, entry in curated["factors"].items():
+        if fid in cur_vals:
+            continue          # a live source already produced this one
         cur_vals[fid] = round(float(entry["currentValue"]), 1)
 
     # --- per-factor history ---
@@ -341,7 +425,18 @@ def build_snapshot(config, curated, prior, args):
     if args.backfill:
         dates = weekly_dates(end_date, weeks)
         for fid in config["factors"]:
-            if fid in curated["factors"]:
+            if fid == "polarization":
+                fetched = (None if mock else polarization_backfill(config["voteview"], dates))
+                if fetched is None:
+                    if mock:
+                        vals = [cur_vals[fid]] * len(dates)
+                    else:
+                        sys.exit("  polarization backfill could not reach Voteview. Re-run "
+                                 "when it responds — this factor's history is a published "
+                                 "series, not something to interpolate.")
+                else:
+                    vals = fetched
+            elif fid in curated["factors"]:
                 vals = curated_trajectory(curated["factors"][fid], dates)
             elif fid in ("economy", "violence"):
                 fetched = None
@@ -381,6 +476,10 @@ def build_snapshot(config, curated, prior, args):
             meta = {"asOf": c.get("asOf", end_date.isoformat()),
                     "sourceURL": c.get("sourceURL", ""), "sourceLabel": c.get("sourceLabel", ""),
                     "events": c.get("events", [])}
+        elif fcfg.get("source") == "voteview":
+            v = config["voteview"]
+            meta = {"asOf": end_date.isoformat(), "sourceURL": v["sourceURL"],
+                    "sourceLabel": v["sourceLabel"], "events": []}
         elif fcfg.get("source") == "fred":
             meta = {"asOf": end_date.isoformat(), "sourceURL": config["fred"]["sourceURL"],
                     "sourceLabel": config["fred"]["sourceLabel"], "events": []}

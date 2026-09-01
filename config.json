@@ -12,7 +12,8 @@
   "factors": {
     "polarization": {
       "weight": 0.2,
-      "method": "curated"
+      "method": "live",
+      "source": "voteview"
     },
     "distrust": {
       "weight": 0.15,
@@ -59,7 +60,7 @@
       {
         "id": "SIPOVGINIUSA",
         "label": "Gini index (World Bank)",
-        "weight": 0.34,
+        "weight": 0.25,
         "normalize": {
           "lo": 35,
           "hi": 45
@@ -70,7 +71,7 @@
       {
         "id": "TDSP",
         "label": "Household debt service",
-        "weight": 0.33,
+        "weight": 0.25,
         "normalize": {
           "lo": 8.0,
           "hi": 14.0
@@ -81,14 +82,40 @@
       {
         "id": "LES1252881600Q",
         "label": "Real median earnings",
-        "weight": 0.33,
+        "weight": 0.25,
         "normalize": {
           "lo": 330,
           "hi": 395
         },
         "invert": true,
         "mock": 376
+      },
+      {
+        "id": "MORTGAGE30US",
+        "label": "30-year fixed mortgage rate",
+        "weight": 0.25,
+        "normalize": {
+          "lo": 3.0,
+          "hi": 9.0
+        },
+        "invert": false,
+        "mock": 6.66,
+        "_note": "Housing cost pressure. The store listing has claimed this factor covers housing affordability since v1.0 while the basket measured only inequality, debt service and real earnings. 3% is the cheap-money floor of the 2010s-21; 9% is above every reading since 1995."
       }
-    ]
+    ],
+    "_basketNote": "Four equally weighted series: inequality, household debt service, real median earnings (inverted) and the 30-year mortgage rate."
+  },
+  "voteview": {
+    "endpoint": "https://voteview.com/static/data/out/parties/HSall_parties.csv",
+    "sourceURL": "https://voteview.com/data",
+    "sourceLabel": "Voteview DW-NOMINATE (Lewis et al.)",
+    "chamber": "House",
+    "_measure": "Absolute distance between Democratic and Republican first-dimension median DW-NOMINATE scores in the House. This is the published measure of the thing the app claims polarization is: ideological distance between the major parties.",
+    "normalize": {
+      "lo": 0.5,
+      "hi": 1.0
+    },
+    "_normalizeNote": "0 = 0.50, about the least polarized post-war Congress (the 91st sits at 0.4975). 100 = 1.00, complete separation of the party medians on the first dimension. The 119th Congress reads 0.9255, the highest in the post-war series.",
+    "mockDistance": 0.9255
   }
 }
