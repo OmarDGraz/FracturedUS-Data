@@ -6,8 +6,8 @@
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 65.68,
-    "probability": 0.2075,
+    "score": 66.0,
+    "probability": 0.2105,
     "history": [
       {
         "date": "2024-09-10",
@@ -526,8 +526,8 @@
       },
       {
         "date": "2026-09-01",
-        "score": 65.68,
-        "probability": 0.2075
+        "score": 66.0,
+        "probability": 0.2105
       }
     ]
   },
@@ -537,9 +537,9 @@
       "oneYearMean": 77,
       "fiveYearMean": 74,
       "method": "live",
-      "asOf": "2026-04-01",
-      "sourceURL": "https://www.pewresearch.org/topic/politics-policy/",
-      "sourceLabel": "Pew Research",
+      "asOf": "2026-09-01",
+      "sourceURL": "https://voteview.com/data",
+      "sourceLabel": "Voteview DW-NOMINATE (Lewis et al.)",
       "events": [],
       "history": [
         {
@@ -1389,10 +1389,10 @@
       ]
     },
     "violence": {
-      "currentValue": 31.8,
+      "currentValue": 33.4,
       "oneYearMean": 38.6,
       "fiveYearMean": 38.9,
-      "method": "stale",
+      "method": "live",
       "asOf": "2026-09-01",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
@@ -1812,7 +1812,7 @@
         },
         {
           "date": "2026-09-01",
-          "value": 31.8
+          "value": 33.4
         }
       ]
     },
