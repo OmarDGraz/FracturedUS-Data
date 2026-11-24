@@ -1,19 +1,14 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-11-16",
-  "asOfLabel": "Nov 16, 2026",
-  "generatedAt": "2026-11-16T00:00:00Z",
+  "asOf": "2026-11-24",
+  "asOfLabel": "Nov 24, 2026",
+  "generatedAt": "2026-11-24T00:00:00Z",
   "horizonYears": 4,
   "cadenceLabel": "Updated weekly",
   "composite": {
-    "score": 65.59,
-    "probability": 0.2066,
+    "score": 66.92,
+    "probability": 0.2194,
     "history": [
-      {
-        "date": "2024-11-19",
-        "score": 62.32,
-        "probability": 0.1768
-      },
       {
         "date": "2024-11-26",
         "score": 62.05,
@@ -528,24 +523,25 @@
         "date": "2026-11-16",
         "score": 65.59,
         "probability": 0.2066
+      },
+      {
+        "date": "2026-11-24",
+        "score": 66.92,
+        "probability": 0.2194
       }
     ]
   },
   "factors": {
     "polarization": {
-      "currentValue": 78.6,
+      "currentValue": 85.0,
       "oneYearMean": 77,
       "fiveYearMean": 74,
       "method": "live",
-      "asOf": "2026-11-16",
+      "asOf": "2026-11-24",
       "sourceURL": "https://voteview.com/data",
       "sourceLabel": "Voteview DW-NOMINATE (Lewis et al.)",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 78.6
-        },
         {
           "date": "2024-11-26",
           "value": 78.6
@@ -957,6 +953,10 @@
         {
           "date": "2026-11-16",
           "value": 78.6
+        },
+        {
+          "date": "2026-11-24",
+          "value": 85.0
         }
       ]
     },
@@ -970,10 +970,6 @@
       "sourceLabel": "Gallup",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 72.0
-        },
         {
           "date": "2024-11-26",
           "value": 72.1
@@ -1385,23 +1381,23 @@
         {
           "date": "2026-11-16",
           "value": 78.0
+        },
+        {
+          "date": "2026-11-24",
+          "value": 78.0
         }
       ]
     },
     "violence": {
-      "currentValue": 35.5,
-      "oneYearMean": 37.2,
+      "currentValue": 35.4,
+      "oneYearMean": 37.3,
       "fiveYearMean": 39.0,
       "method": "live",
-      "asOf": "2026-11-16",
+      "asOf": "2026-11-24",
       "sourceURL": "https://www.gdeltproject.org/",
       "sourceLabel": "GDELT",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 32.8
-        },
         {
           "date": "2024-11-26",
           "value": 31.2
@@ -1813,23 +1809,23 @@
         {
           "date": "2026-11-16",
           "value": 35.5
+        },
+        {
+          "date": "2026-11-24",
+          "value": 35.4
         }
       ]
     },
     "economy": {
-      "currentValue": 56.7,
-      "oneYearMean": 51.8,
+      "currentValue": 57.4,
+      "oneYearMean": 51.9,
       "fiveYearMean": 52.5,
       "method": "live",
-      "asOf": "2026-11-16",
+      "asOf": "2026-11-24",
       "sourceURL": "https://fred.stlouisfed.org/",
       "sourceLabel": "FRED (St. Louis Fed), incl. World Bank Gini",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 53.8
-        },
         {
           "date": "2024-11-26",
           "value": 54.1
@@ -2241,6 +2237,10 @@
         {
           "date": "2026-11-16",
           "value": 56.7
+        },
+        {
+          "date": "2026-11-24",
+          "value": 57.4
         }
       ]
     },
@@ -2254,10 +2254,6 @@
       "sourceLabel": "Pew Research",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 77.6
-        },
         {
           "date": "2024-11-26",
           "value": 77.6
@@ -2669,6 +2665,10 @@
         {
           "date": "2026-11-16",
           "value": 82.0
+        },
+        {
+          "date": "2026-11-24",
+          "value": 82.0
         }
       ]
     },
@@ -2682,10 +2682,6 @@
       "sourceLabel": "ADL / SPLC",
       "events": [],
       "history": [
-        {
-          "date": "2024-11-19",
-          "value": 55.6
-        },
         {
           "date": "2024-11-26",
           "value": 55.6
@@ -3096,6 +3092,10 @@
         },
         {
           "date": "2026-11-16",
+          "value": 60.0
+        },
+        {
+          "date": "2026-11-24",
           "value": 60.0
         }
       ]
